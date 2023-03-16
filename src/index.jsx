@@ -24,7 +24,7 @@ export default function Index() {
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="FormScreen" component={FormScreen} />
             <Stack.Screen name="DeviceInfoScreen" component={DeviceInfoScreen} />
-            <Stack.Screen name="SplashScreen" component={SplashScreen} />
+           
            
           </>
         ) : (

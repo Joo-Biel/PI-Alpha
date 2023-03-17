@@ -1,89 +1,140 @@
 import React, { useState } from "react";
 import {
   StyleSheet,
-  View,
   Text,
   TextInput,
   TouchableOpacity,
+  View,
   ImageBackground,
 } from "react-native";
 
-export default function LoginScreen({ navigation, onLogin }) {
+const imageURI =
+  "https://cdn.discordapp.com/attachments/1085610772014575756/1086347788264144906/Luizcbm_black_and_green_background_in_426x870_2b8c5382-f10b-41a3-82e0-343c439ebddd.png";
+
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    // Aqui você pode adicionar a lógica de login
-    // por exemplo, verificar se o email e senha estão corretos
-    // e fazer uma requisição a um servidor para validar as credenciais.
+    // implementar a lógica de autenticação aqui
+  };
 
-    // Se as credenciais forem válidas, navegue para a tela HomeScreen.
-    onLogin();
+  const handleNavigateToCadScreen = () => {
+    navigation.navigate("CadScreen");
   };
 
   return (
-    <ImageBackground
-      source={require("../assets/Fundão.jpg")}
-      style={styles.backgroundImage}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Login</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="E-mail"
-          value={email}
-          onChangeText={setEmail}
-          autoCapitalize="none"
-          keyboardType="email-address"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-        />
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Entrar</Text>
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
+    <View style={styles.container}>
+      <ImageBackground
+        source={{ uri: imageURI }}
+        style={styles.backgroundImage}
+      >
+        <View style={styles.formContainer}>
+          <View>
+            <img
+              src="https://www.canva.com/design/DAFde9_TmLY/Py6axnS7j8Qh-MaHoDfmUQ/edit?utm_content=DAFde9_TmLY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton.jpg"
+              alt=""
+            />
+          </View>
+          <View style={styles.fundo}>
+            
+             <div style={styles.Log} ><Text>Login</Text></div>
+           
+            <TextInput
+              style={styles.input}
+              placeholder="Email"
+              placeholderTextColor="#999"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              autoCorrect={false}
+              value={email}
+              onChangeText={setEmail}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Senha"
+              placeholderTextColor="#999"
+              secureTextEntry
+              value={password}
+              onChangeText={setPassword}
+            />
+            <TouchableOpacity
+              style={styles.button}
+              onPress={handleNavigateToCadScreen}
+            >
+              <Text style={styles.buttonText}>Cadastrar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <Text style={styles.buttonText}>Entrar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "Black",
-    alignItems: "center",
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "cover",
     justifyContent: "center",
   },
+  formContainer: {
+    height: 450,
+    marginTop: 40,
+    marginBottom: 0,
+  },
   input: {
-    width: "80%",
     height: 40,
-    margin: 5,
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
-    backgroundColor: "white",
-    color: "black",
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    borderRadius: 400,
+    backgroundColor: "#fff",
+    width: 200,
+    marginLeft: 50,
   },
   button: {
-    backgroundColor: "green",
-    borderRadius: 10,
-    padding: 10,
-    marginTop: 20,
+    height: 40,
+    borderRadius: 40,
+    backgroundColor: "#38b6ff",
+    justifyContent: "center",
+    alignItems: "center",
+    width: 100,
+    marginLeft: 100,
+    marginTop: 40,
   },
   buttonText: {
-    color: "white",
+    color: "#fff",
     fontWeight: "bold",
-    textAlign: "center",
   },
-  logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 20,
+  fundo: {
+    flex: 1,
+    width: "300px",
+    height: "100px",
+    paddingBottom: 10,
+    backgroundColor: "#76bb39",
+    borderRadius: "40px",
+    marginLeft: 55,
+    marginTop: 0,
+  },
+  Log: {
+    flex: 1,
+    width: "100px",
+    marginLeft: 85,
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 50,
+  },
+
+  Text: {
+    color: "#fff",
+    fontWeight: "bold",
+    marginLeft: 115,
   },
 });
 
-export const userLoggedIn = true;
+export default LoginScreen;

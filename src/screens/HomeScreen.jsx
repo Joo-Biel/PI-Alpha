@@ -1,49 +1,42 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
+export default function HomeScreen() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-     
-      <Text style={styles.title}>Bem-vindo à Rádio Web</Text>
-      <TouchableOpacity style={styles.playButton} onPress={() => navigation.navigate('Radio')}>
-        <Text style={styles.playButtonText}>Ouvir agora</Text>
-      </TouchableOpacity>
+      <Text style={styles.title}>Olá seja bem vindo,</Text>
+      <Text style={styles.title}>para onde você quer ir</Text>
+
+      <Text style={styles.title}></Text>
+      <Button
+        title="Ver informações do seu dispositivo"
+        onPress={() => navigation.navigate('DeviceInfoScreen')}
+      />
+      
+
+      
+      <Button
+        title="Formulario"
+        onPress={() => navigation.navigate('FormScreen')}
+      />
+    
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 30,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
-  playButton: {
-    backgroundColor: '#f4511e',
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 20,
-  },
-  playButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
 });
-
-export default HomeScreen;
-
-
 

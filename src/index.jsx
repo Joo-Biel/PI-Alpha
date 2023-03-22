@@ -18,24 +18,24 @@ export default function Index() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        {isLoggedIn ? (
-          <>
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-            <Stack.Screen name="FormScreen" component={FormScreen} />
-            <Stack.Screen name="DeviceInfoScreen" component={DeviceInfoScreen} />
-            <Stack.Screen name="Cadastrar" component={CadScreen} />
-           
-           
-          </>
-        ) : (
-          <Stack.Screen
+      <Stack.Navigator initialRouteName='HomeScreen'>
+        {/* {isLoggedIn ? (
+          <> */}
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="FormScreen" component={FormScreen} />
+        <Stack.Screen name="DeviceInfoScreen" component={DeviceInfoScreen} />
+        <Stack.Screen name="Cadastrar" component={CadScreen} />
+
+
+        {/* </>
+        ) : ( */}
+        <Stack.Screen
           name="LoginScreen"
           options={{ headerShown: false }}
-          >
-            { props => <LoginScreen {...props} onLogin={handleLogin} /> }
-          </Stack.Screen>
-        )}
+        >
+          {props => <LoginScreen {...props} onLogin={handleLogin} />}
+        </Stack.Screen>
+        {/* )} */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -6,6 +6,8 @@ import FormScreen from './screens/FormScreen';
 import LoginScreen from './screens/LoginScreen';
 import DeviceInfoScreen from './screens/DeviceInfoScreen';
 import CadScreen from './screens/CadScreen';
+import LocuScreen from './screens/LocuScreen';
+import LocutoresScreen from './screens/LocutoresScreen';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +27,8 @@ export default function Index() {
         <Stack.Screen name="FormScreen" component={FormScreen} />
         <Stack.Screen name="DeviceInfoScreen" component={DeviceInfoScreen} />
         <Stack.Screen name="Cadastrar" component={CadScreen} />
+        <Stack.Screen name="LocuScreen" component={LocuScreen} />
+        <Stack.Screen name="LocutoresScreen" component={LocutoresScreen} />
 
 
         {/* </>

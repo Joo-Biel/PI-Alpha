@@ -1,0 +1,39 @@
+.locutores-container {
+    background: url(https://i.imgur.com/RZPw6cb.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .locutor-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .locutor-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .locutor-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .locutor-info p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+  

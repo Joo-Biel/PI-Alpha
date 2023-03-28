@@ -37,9 +37,9 @@ const LoginScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.fundo}>
-            
-             <div style={styles.Log} ><Text>Login</Text></div>
-           
+
+            <div style={styles.Log} ><Text>Login</Text></div>
+
             <TextInput
               style={styles.input}
               placeholder="Email"

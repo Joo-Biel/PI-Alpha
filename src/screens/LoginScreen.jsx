@@ -9,7 +9,7 @@ import {
 } from "react-native";
 
 const imageURI =
-  "https://cdn.discordapp.com/attachments/1085610772014575756/1086347788264144906/Luizcbm_black_and_green_background_in_426x870_2b8c5382-f10b-41a3-82e0-343c439ebddd.png";
+  "file:///C:/Users/Luiz.machado3/Downloads/Design%20sem%20nome.png";
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");

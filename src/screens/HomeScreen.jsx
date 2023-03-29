@@ -22,6 +22,10 @@ export default function HomeScreen() {
         title="Locutores"
         onPress={() => navigation.navigate('LocutoresScreen')}
       />
+      <Button
+        title="Contatos"
+        onPress={() => navigation.navigate('ContatoScreen')}
+      />
     
     </View>
   );

@@ -8,6 +8,7 @@ import DeviceInfoScreen from './screens/DeviceInfoScreen';
 import CadScreen from './screens/CadScreen';
 import LocuScreen from './screens/LocuScreen';
 import LocutoresScreen from './screens/LocutoresScreen';
+import ContatoScreen from './screens/ContatoScreen';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ export default function Index() {
         <Stack.Screen name="Cadastrar" component={CadScreen} />
         <Stack.Screen name="LocuScreen" component={LocuScreen} />
         <Stack.Screen name="LocutoresScreen" component={LocutoresScreen} />
+        <Stack.Screen name="ContatoScreen" component={ContatoScreen} />
 
 
         {/* </>

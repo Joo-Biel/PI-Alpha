@@ -9,6 +9,7 @@ import CadScreen from './screens/CadScreen';
 import LocuScreen from './screens/LocuScreen';
 import LocutoresScreen from './screens/LocutoresScreen';
 import ContatoScreen from './screens/ContatoScreen';
+import LogoScreen from './screens/LogoScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,7 @@ export default function Index() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='HomeScreen'>
+      <Stack.Navigator initialRouteName='LogoScreen'>
         {/* {isLoggedIn ? (
           <> */}
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
@@ -31,6 +32,7 @@ export default function Index() {
         <Stack.Screen name="LocuScreen" component={LocuScreen} />
         <Stack.Screen name="LocutoresScreen" component={LocutoresScreen} />
         <Stack.Screen name="ContatoScreen" component={ContatoScreen} />
+        <Stack.Screen name="LogoScreen" component={LogoScreen} />
 
 
         {/* </>

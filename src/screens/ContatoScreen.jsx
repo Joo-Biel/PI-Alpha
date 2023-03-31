@@ -1,9 +1,9 @@
+import { View, Text, TextInput, TouchableOpacity, Linking, Image } from 'react-native';
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Linking } from 'react-native';
-
-import imagem from '../../assets/back.png'; /*LOCUTORES TELA FUNDO */
-
-const imageURI = imagem;                     /*LOCUTORES TELA FUNDO */
+import facebookLogo from '../../assets/facebook_logo.png';
+import twitterLogo from '../../assets/twitter_logo.png';
+import instagramLogo from '../../assets/instagram_logo.png';
+import backgroundImage from '../../assets/back.png';
 
 const ContatoScreen = () => {
   const [mensagem, setMensagem] = useState('');
@@ -14,25 +14,14 @@ const ContatoScreen = () => {
   };
 
   return (
-    
-               
-    <View style={styles.container}>           
-
-<ImageBackground                            
-
-source={{ uri: imageURI }}                
-
-style={styles.backgroundImage}            
-
-                                          /*LOCUTORES TELA FUNDO */
-></ImageBackground>                      
-
+    <View style={styles.container}>
       <Text style={styles.title}>CONTATOS</Text>
 
       <TouchableOpacity
         style={styles.socialButton}
         onPress={() => Linking.openURL('https://www.facebook.com/')}
       >
+        <Image source={facebookLogo} style={styles.logo} />
         <Text style={styles.socialButtonText}>Facebook</Text>
       </TouchableOpacity>
 
@@ -40,6 +29,7 @@ style={styles.backgroundImage}
         style={styles.socialButton}
         onPress={() => Linking.openURL('https://www.twitter.com/')}
       >
+        <Image source={twitterLogo} style={styles.logo} />
         <Text style={styles.socialButtonText}>Twitter</Text>
       </TouchableOpacity>
 
@@ -47,9 +37,10 @@ style={styles.backgroundImage}
         style={styles.socialButton}
         onPress={() => Linking.openURL('https://www.instagram.com/')}
       >
+        <Image source={instagramLogo} style={styles.logo} />
         <Text style={styles.socialButtonText}>Instagram</Text>
       </TouchableOpacity>
-        
+
       <View style={styles.caixa1}>
         <Text style={styles.caixa1}>Mande sua mensagem</Text>
         <TextInput 
@@ -71,19 +62,18 @@ style={styles.backgroundImage}
   );
 };
 
-
-
 const styles = {
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundImage: `url(${backgroundImage})`,
   },
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
-},
+  },
   title: {
+    color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
@@ -94,6 +84,13 @@ const styles = {
     paddingHorizontal: 10,
     borderRadius: 10,
     marginBottom: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
   },
   caixa1: {
     backgroundColor: '#76BB39',
@@ -112,7 +109,7 @@ const styles = {
     paddingHorizontal: 10,
     borderRadius: 10,
     marginBottom: 10,
-    color: '#A6A6A6',
+    color: '#Afa6A6A6',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'marginLeft',

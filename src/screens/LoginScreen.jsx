@@ -1,3 +1,4 @@
+// import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -12,14 +13,18 @@ const imageURI =
   "https://cdn.discordapp.com/attachments/1085610772014575756/1086347788264144906/Luizcbm_black_and_green_background_in_426x870_2b8c5382-f10b-41a3-82e0-343c439ebddd.png";
 
 const LoginScreen = ({ navigation }) => {
+
+  // const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     // implementar a lógica de autenticação aqui
+    console.log ("Cliquei no botão de login")
   };
 
   const handleNavigateToCadScreen = () => {
+    // const navigation = useNavigation
     navigation.navigate("CadScreen");
   };
 
@@ -37,9 +42,10 @@ const LoginScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.fundo}>
-            
-             <div style={styles.Log} ><Text>Login</Text></div>
-           
+            <div style={styles.Log}>
+              <Text>Login</Text>
+            </div>
+
             <TextInput
               style={styles.input}
               placeholder="Email"
@@ -58,14 +64,14 @@ const LoginScreen = ({ navigation }) => {
               value={password}
               onChangeText={setPassword}
             />
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <Text style={styles.buttonText}>Entrar</Text>
+            </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
               onPress={handleNavigateToCadScreen}
             >
               <Text style={styles.buttonText}>Cadastrar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
           </View>
         </View>

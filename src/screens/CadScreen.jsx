@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const CadScreen = () => {
   const [name, setName] = useState('');
@@ -44,7 +45,7 @@ const CadScreen = () => {
         value={password}
         secureTextEntry
       />
-      <Button title="Cadastrar" onPress={handleCadastro} />
+      <Button title="Cadastro" onPress={handleCadastro} />
     </View>
   );
 };
